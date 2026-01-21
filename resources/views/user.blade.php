@@ -7,18 +7,19 @@
 
     <div class="py-4">
         <div class="container">
-            <div class="card shadow">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">Data User</h5>
+            <div class="card-body">
+                <div class="alert">
+                    <a href="" class="btn btn-success"><i class="bi bi-plus"></i>Create Data</a>
+                    <a href="" class="btn btn-warning"><i class="bi bi-printer"> Cetak</i></a>
                 </div>
-
-                <div class="card-body">
                     <table class="table table-bordered table-striped">
                         <thead class="table-primary text-dark">
                             <tr>
                                 <th>No</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Role</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,12 +31,15 @@
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $user['name'] }}</td>
                                     <td>{{ $user['email'] }}</td>
+                                    <td>{{ $user['role'] }}</td>
+                                    <td>
+                                        <a href="" class="btn btn-primary"><i class="bi bi-pen"></i>Edit</a>
+                                        <a href="" class="btn btn-danger"><i class="bi bi-trash"></i>Delete</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
-                </div>
-
             </div>
         </div>
     </div>

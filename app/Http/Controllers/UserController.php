@@ -13,4 +13,14 @@ class UserController extends Controller
       // $users = User::all();
         return view('user', $data);
     }
+
+    public function edit()
+    {
+        return view('useredit');
+    }
+
+    public function update(Request $request, $id)
+    {
+        //
+    }
 }
