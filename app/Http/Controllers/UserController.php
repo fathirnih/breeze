@@ -11,16 +11,7 @@ class UserController extends Controller
     {
        $data = ['users' => User::all()];
       // $users = User::all();
-        return view('user', $data);
+        return view('user.index', $data);
     }
 
-    public function edit()
-    {
-        return view('useredit');
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
 }

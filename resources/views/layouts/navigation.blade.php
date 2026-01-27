@@ -16,11 +16,20 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                @if (Auth::user()->role === 'admin')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('user')" :active="request()->routeIs('user')">
+                    <x-nav-link :href="route('user.index')" :active="request()->routeIs('user')">
                         Data User
                     </x-nav-link>
                 </div>
+                @endif
+                @if (Auth::user()->role === 'user')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('pelanggan.index')" :active="request()->routeIs('pelanggan')">
+                        Data Pelanggan
+                    </x-nav-link>
+                </div>
+                @endif 
             </div>
 
             <!-- Settings Dropdown -->
