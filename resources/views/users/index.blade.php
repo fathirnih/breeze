@@ -9,8 +9,8 @@
         <div class="container">
             <div class="card-body">
                 <div class="alert">
-                    <a href="" class="btn btn-success"><i class="bi bi-plus"></i>Create Data</a>
-                    <a href="" class="btn btn-warning"><i class="bi bi-printer"> Cetak</i></a>
+                    <a href="{{ route('users.create') }}" class="btn btn-success"><i class="bi bi-plus"></i>Create Data</a>
+                    <a href="{{ route('users.cetak') }}" class="btn btn-warning"><i class="bi bi-printer"> Cetak</i></a>
                 </div>
                     <table class="table table-bordered table-striped">
                         <thead class="table-primary text-dark">
@@ -33,8 +33,14 @@
                                     <td>{{ $user['email'] }}</td>
                                     <td>{{ $user['role'] }}</td>
                                     <td>
-                                        <a href="" class="btn btn-primary"><i class="bi bi-pen"></i>Edit</a>
-                                        <a href="" class="btn btn-danger"><i class="bi bi-trash"></i>Delete</a>
+                                        <a href="{{ route('users.edit', $user['id']) }}" class="btn btn-primary"><i class="bi bi-pen"></i>Edit</a>
+                                        <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="d-inline">
+    @csrf @method('DELETE')
+    <button class="btn btn-danger" onclick="return confirm('Hapus user?')">
+        Delete
+    </button>
+</form>
+
                                     </td>
                                 </tr>
                             @endforeach
