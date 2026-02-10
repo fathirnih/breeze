@@ -18,7 +18,7 @@
                 </div>
                 @if (Auth::user()->role === 'admin')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('user.index')" :active="request()->routeIs('user')">
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users')">
                         Data User
                     </x-nav-link>
                 </div>
