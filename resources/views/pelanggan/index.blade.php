@@ -9,7 +9,7 @@
         <div class="container">
             <div class="card-body">
                 <div class="alert">
-                    <a href="" class="btn btn-success">
+                    <a href="{{ route('pelanggan.create') }}" class="btn btn-success">
                         <i class="bi bi-plus"></i> Create Data
                     </a>
                     <a href="#" class="btn btn-warning">
@@ -33,10 +33,10 @@
                                 <td>{{ $p->nama }}</td>
                                 <td>{{ $p->alamat }}</td>
                                 <td>
-                                    <a href="" class="btn btn-primary">
+                                    <a href="{{ route('pelanggan.edit', $p->id) }}" class="btn btn-primary">
                                         <i class="bi bi-pen"></i> Edit
                                     </a>
-                                    <form action=""
+                                    <form action="{{ route('pelanggan.destroy', $p->id) }}"
                                           method="POST"
                                           class="d-inline">
                                         @csrf
